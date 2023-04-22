@@ -26,11 +26,11 @@ const App = () => {
 
   useEffect(() => {
     const effect = async () => {
-      // FIXME there is something wrong with this loading state... to be investigated :D
       setLoading(true);
       const res = await fetch(`${API}/search?q=${searchText}`);
       const data = await res.json();
       setResults(data);
+      setLoading(false);
     };
     effect();
   }, [searchText, setLoading, setResults]);
@@ -42,6 +42,7 @@ const App = () => {
         onChange={setSearchText}
         placeholder="Type to filter events"
       />
+
       {isLoading ? (
         <div>{"Loading..."}</div>
       ) : results ? (
