@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TextInput from "./components/TextInput";
+import { TextInput } from "@ledgerhq/ui";
 
 const API = "http://localhost:5000";
 
@@ -28,7 +28,11 @@ const App = () => {
 
   return (
     <div>
-      <TextInput value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
+      <TextInput
+        value={searchText}
+        onChange={setSearchText}
+        placeholder="Type to filter events"
+      />
       {isLoading ? (
         <div>{"Loading..."}</div>
       ) : results ? (

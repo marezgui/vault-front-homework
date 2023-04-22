@@ -1,0 +1,6 @@
+{
+  "extends": "@ledgerhq/tsconfig/vite.json",
+  "include": [
+    "src"
+  ]
+}
