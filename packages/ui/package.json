@@ -8,7 +8,6 @@
     "lint": "eslint \"**/*.ts*\" --fix"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
     "@ledgerhq/eslint-config-custom": "workspace:*",
     "@ledgerhq/tsconfig": "workspace:*",
     "typescript": "^4.9.4"

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { TextInput } from "@ledgerhq/ui";
+import { useEffect, useState } from 'react';
+import { TextInput } from '@ledgerhq/ui';
 
-const API = "http://localhost:4000";
+const API = 'http://localhost:4000';
 
 type NotificationData = {
   id: number;
@@ -20,7 +20,7 @@ type Notification = {
 };
 
 const App = () => {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [isLoading, setLoading] = useState(false);
   const [results, setResults] = useState<null | Notification[]>(null);
 
@@ -37,19 +37,17 @@ const App = () => {
 
   return (
     <div>
-      <TextInput
-        value={searchText}
-        onChange={setSearchText}
-        placeholder="Type to filter events"
-      />
+      <TextInput value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
 
       {isLoading ? (
-        <div>{"Loading..."}</div>
+        <div>Loading...</div>
       ) : results ? (
         <div>
           {results.map((r) => (
             // TODO we must finalize this integration!! not very pretty like this
-            <div className="border border-dashed">{JSON.stringify(r)}</div>
+            <div key={r.id} className="border border-dashed">
+              {JSON.stringify(r)}
+            </div>
           ))}
         </div>
       ) : null}

@@ -14,7 +14,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
     "@ledgerhq/config": "workspace:*",
     "@ledgerhq/eslint-config-custom": "workspace:*",
     "@ledgerhq/tsconfig": "workspace:*",

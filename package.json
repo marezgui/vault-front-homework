@@ -11,9 +11,8 @@
     "build:vault-server": "turbo build --filter=vault-server"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
     "@ledgerhq/eslint-config-custom": "workspace:*",
-    "prettier": "^2.5.1",
+    "prettier": "latest",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0"
