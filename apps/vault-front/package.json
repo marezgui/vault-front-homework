@@ -9,6 +9,7 @@
     "lint": "eslint \"**/*.ts*\" --fix"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "@ledgerhq/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

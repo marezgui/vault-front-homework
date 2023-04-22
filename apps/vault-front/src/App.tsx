@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TextInput, NotificationList } from '@ledgerhq/ui';
+import { SearchInput, NotificationList, Loading } from '@ledgerhq/ui';
 import { Notifications } from '@ledgerhq/types';
 
 import { fetchNotifications } from '@/api/fetchNotifications';
@@ -14,11 +14,12 @@ const App = () => {
     fetchNotifications(searchText)
       .then((notifications) => {
         setNotifications(notifications);
+        setLoading(false);
       })
       .catch((error) => {
+        setLoading(false);
         console.error(error);
       });
-    setLoading(false);
   }, [searchText, setLoading, setNotifications]);
 
   const handleChange = (value: string): void => {
@@ -26,10 +27,10 @@ const App = () => {
   };
 
   return (
-    <div>
-      <TextInput value={searchText} onChange={handleChange} placeholder="Type to filter events" />
+    <div className="p-4 sm:p-8 md:p-16 max-w-5xl m-auto">
+      <SearchInput value={searchText} onChange={handleChange} placeholder="Search by event type" />
 
-      {isLoading ? <div>Loading...</div> : <NotificationList notifications={notifications} />}
+      {isLoading ? <Loading /> : <NotificationList notifications={notifications} />}
     </div>
   );
 };

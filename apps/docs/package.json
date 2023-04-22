@@ -9,13 +9,14 @@
     "lint": "eslint \".storybook/*.{t,j}s\" --fix"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@ledgerhq/eslint-config-custom": "workspace:*",
     "@ledgerhq/config": "workspace:*",
+    "@ledgerhq/eslint-config-custom": "workspace:*",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",

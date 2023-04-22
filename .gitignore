@@ -11,3 +11,4 @@ server/dist
 public/dist
 __pycache__
 .vscode
+storybook-static
