@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@ledgerhq/eslint-config-custom": "workspace:*",
+    "@types/node": "^18.15.13",
     "prettier": "latest",
     "turbo": "latest"
   },

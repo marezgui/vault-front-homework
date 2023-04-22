@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { TextInput } from '@ledgerhq/ui';
-
-const API = 'http://localhost:4000';
+import { envVars } from '@ledgerhq/config';
 
 type NotificationData = {
   id: number;
@@ -27,7 +26,7 @@ const App = () => {
   useEffect(() => {
     const effect = async () => {
       setLoading(true);
-      const res = await fetch(`${API}/search?q=${searchText}`);
+      const res = await fetch(`${envVars.VAULT_API_URL}/search?q=${searchText}`);
       const data = await res.json();
       setResults(data);
       setLoading(false);
