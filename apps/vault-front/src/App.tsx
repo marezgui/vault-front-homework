@@ -1,27 +1,12 @@
 import { useEffect, useState } from 'react';
 import { TextInput } from '@ledgerhq/ui';
 import { envVars } from '@ledgerhq/config';
-
-type NotificationData = {
-  id: number;
-  amount?: number;
-  unit?: string;
-  from?: string;
-  to?: string;
-  name?: string;
-  currency?: string;
-};
-
-type Notification = {
-  id: string;
-  type: string;
-  data: NotificationData;
-};
+import { Notifications } from '@ledgerhq/types';
 
 const App = () => {
   const [searchText, setSearchText] = useState('');
   const [isLoading, setLoading] = useState(false);
-  const [results, setResults] = useState<null | Notification[]>(null);
+  const [results, setResults] = useState<null | Notifications>(null);
 
   useEffect(() => {
     const effect = async () => {

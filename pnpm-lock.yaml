@@ -19,6 +19,7 @@ importers:
       '@ledgerhq/config': workspace:*
       '@ledgerhq/eslint-config-custom': workspace:*
       '@ledgerhq/tsconfig': workspace:*
+      '@ledgerhq/types': workspace:*
       '@ledgerhq/ui': workspace:*
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
@@ -39,6 +40,7 @@ importers:
       '@ledgerhq/config': link:../../packages/config
       '@ledgerhq/eslint-config-custom': link:../../packages/eslint-config-custom
       '@ledgerhq/tsconfig': link:../../packages/tsconfig
+      '@ledgerhq/types': link:../../packages/types
       '@types/react': 18.0.38
       '@types/react-dom': 18.0.11
       '@vitejs/plugin-react-swc': 3.3.0_vite@4.0.3
@@ -76,6 +78,9 @@ importers:
       eslint-plugin-react: 7.32.2_eslint@8.39.0
 
   packages/tsconfig:
+    specifiers: {}
+
+  packages/types:
     specifiers: {}
 
   packages/ui:
