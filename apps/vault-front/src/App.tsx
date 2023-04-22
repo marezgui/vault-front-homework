@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { TextInput } from "@ledgerhq/ui";
 
-const API = "http://localhost:5000";
+const API = "http://localhost:4000";
 
 type Notif = {
   id: string;
