@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "docker build -t vault-front-homework:latest .",
-    "dev": "pnpm build && docker run -p 4000:5000 vault-front-homework:latest"
+    "build:docker": "docker build -t vault-front-homework:latest .",
+    "dev": "pnpm build:docker && docker run --rm -p 4000:5000 vault-front-homework:latest"
   }
 }
