@@ -9,7 +9,7 @@ interface NotificationData {
 }
 
 export interface Notification {
-  id: string;
+  id: number;
   type: string;
   data: NotificationData;
 }

@@ -8,7 +8,9 @@
     "dev:vault-front": "turbo dev --filter=vault-front...",
     "build:vault-front": "turbo build --filter=vault-front...",
     "dev:vault-server": "turbo dev --filter=vault-server",
-    "build:vault-server": "turbo build --filter=vault-server"
+    "build:vault-server": "turbo build --filter=vault-server",
+    "dev:docs": "turbo dev --filter=docs",
+    "build:docs": "turbo build --filter=docs"
   },
   "devDependencies": {
     "@ledgerhq/eslint-config-custom": "workspace:*",
