@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ["@ledgerhq/custom"],
+  extends: ['@ledgerhq/custom'],
 };

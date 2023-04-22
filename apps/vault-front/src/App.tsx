@@ -1,40 +1,35 @@
 import { useEffect, useState } from 'react';
-import { TextInput } from '@ledgerhq/ui';
-import { envVars } from '@ledgerhq/config';
+import { TextInput, NotificationList } from '@ledgerhq/ui';
 import { Notifications } from '@ledgerhq/types';
+
+import { fetchNotifications } from '@/api/fetchNotifications';
 
 const App = () => {
   const [searchText, setSearchText] = useState('');
   const [isLoading, setLoading] = useState(false);
-  const [results, setResults] = useState<null | Notifications>(null);
+  const [notifications, setNotifications] = useState<[] | Notifications>([]);
 
   useEffect(() => {
-    const effect = async () => {
-      setLoading(true);
-      const res = await fetch(`${envVars.VAULT_API_URL}/search?q=${searchText}`);
-      const data = await res.json();
-      setResults(data);
-      setLoading(false);
-    };
-    effect();
-  }, [searchText, setLoading, setResults]);
+    setLoading(true);
+    fetchNotifications(searchText)
+      .then((notifications) => {
+        setNotifications(notifications);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    setLoading(false);
+  }, [searchText, setLoading, setNotifications]);
+
+  const handleChange = (value: string): void => {
+    setSearchText(value);
+  };
 
   return (
     <div>
-      <TextInput value={searchText} onChange={setSearchText} placeholder="Type to filter events" />
+      <TextInput value={searchText} onChange={handleChange} placeholder="Type to filter events" />
 
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : results ? (
-        <div>
-          {results.map((r) => (
-            // TODO we must finalize this integration!! not very pretty like this
-            <div key={r.id} className="border border-dashed">
-              {JSON.stringify(r)}
-            </div>
-          ))}
-        </div>
-      ) : null}
+      {isLoading ? <div>Loading...</div> : <NotificationList notifications={notifications} />}
     </div>
   );
 };

@@ -87,6 +87,7 @@ importers:
     specifiers:
       '@ledgerhq/eslint-config-custom': workspace:*
       '@ledgerhq/tsconfig': workspace:*
+      '@ledgerhq/types': workspace:*
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
       react: ^18.2.0
@@ -100,6 +101,7 @@ importers:
     devDependencies:
       '@ledgerhq/eslint-config-custom': link:../eslint-config-custom
       '@ledgerhq/tsconfig': link:../tsconfig
+      '@ledgerhq/types': link:../types
       typescript: 4.9.4
 
 packages:

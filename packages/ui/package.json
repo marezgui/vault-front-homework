@@ -10,6 +10,7 @@
   "devDependencies": {
     "@ledgerhq/eslint-config-custom": "workspace:*",
     "@ledgerhq/tsconfig": "workspace:*",
+    "@ledgerhq/types": "workspace:*",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {

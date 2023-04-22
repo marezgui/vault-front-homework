@@ -29,4 +29,9 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'linebreak-style': ['error', 'unix'],
   },
+  settings: {
+    react: {
+      version: '18.2',
+    },
+  },
 };
