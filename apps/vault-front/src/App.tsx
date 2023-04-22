@@ -3,17 +3,26 @@ import { TextInput } from "@ledgerhq/ui";
 
 const API = "http://localhost:4000";
 
-type Notif = {
+type NotificationData = {
+  id: number;
+  amount?: number;
+  unit?: string;
+  from?: string;
+  to?: string;
+  name?: string;
+  currency?: string;
+};
+
+type Notification = {
   id: string;
   type: string;
-  // FIXME we should *probably* not have this `any`
-  data: any;
+  data: NotificationData;
 };
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [results, setResults] = useState<null | Notif[]>(null);
+  const [results, setResults] = useState<null | Notification[]>(null);
 
   useEffect(() => {
     const effect = async () => {
