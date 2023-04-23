@@ -10,7 +10,7 @@ interface NotificationData {
 
 export interface Notification {
   id: number;
-  type: 'TRANSACTION_SENT' | 'TRANSACTION_RECEIVED' | 'ACCOUNT_CREATED' | 'DEFAULT';
+  type?: 'TRANSACTION_SENT' | 'TRANSACTION_RECEIVED' | 'ACCOUNT_CREATED';
   data: NotificationData;
 }
 

@@ -24,17 +24,21 @@ const TYPE_TO_ICON = {
   DEFAULT: <ExclamationCircleIcon className="h-6 w-6 text-gray-500" />,
 };
 
-export const NotificationItem = ({ type = 'DEFAULT', data }: NotificationItemProps) => {
+export const NotificationItem = ({ type, data }: NotificationItemProps) => {
   const { amount, unit, from, to, name, currency } = data;
   const fromPreview = addressPreview(from);
   const toPreview = addressPreview(to);
+  const icon = TYPE_TO_ICON[type || 'DEFAULT'];
+  const label = TYPE_TO_LABEL[type || 'DEFAULT'];
 
   return (
     <div className="flex justify-between p-4">
       <div className="flex">
-        <div className="mr-4">{TYPE_TO_ICON[type]}</div>
+        <div className="mr-4">{icon}</div>
 
-        <div className="font-bold text-lg justify-item">{TYPE_TO_LABEL[type]}</div>
+        <div data-testid="notification-type" className="font-bold text-lg justify-item">
+          {label}
+        </div>
       </div>
 
       <div className="flex">
@@ -51,7 +55,7 @@ export const NotificationItem = ({ type = 'DEFAULT', data }: NotificationItemPro
         </div>
 
         <div className="ml-4 text-right" style={{ minWidth: '80px' }}>{`${amount ?? ''} ${
-          unit ?? ''
+          unit || ''
         }`}</div>
       </div>
     </div>

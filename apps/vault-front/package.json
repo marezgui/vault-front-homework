@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint \"**/*.ts*\" --fix"
+    "lint": "eslint \"**/*.ts*\" --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
@@ -19,14 +21,18 @@
     "@ledgerhq/eslint-config-custom": "workspace:*",
     "@ledgerhq/tsconfig": "workspace:*",
     "@ledgerhq/types": "workspace:*",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.3",
-    "vite-plugin-environment": "^1.1.3",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.3.0",
     "autoprefixer": "^10.4.14",
+    "happy-dom": "^9.9.2",
     "postcss": "^8.4.22",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3",
+    "vite-plugin-environment": "^1.1.3",
+    "vitest": "^0.30.1",
+    "vitest-fetch-mock": "^0.2.2"
   }
 }

@@ -1,7 +1,8 @@
 {
   "extends": "@ledgerhq/tsconfig/vite.json",
   "include": [
-    "src"
+    "src",
+    "./setupTest.ts"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",

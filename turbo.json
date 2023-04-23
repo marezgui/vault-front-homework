@@ -14,6 +14,10 @@
       "cache": false,
       "persistent": true
     },
+    "test": {},
+    "test:watch": {
+      "cache": false
+    },
     "vault-front#dev": {
       "env": [
         "VAULT_API_URL"
