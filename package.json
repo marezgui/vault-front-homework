@@ -2,22 +2,38 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev:vault-front": "turbo dev --filter=vault-front...",
-    "build:vault-front": "turbo build --filter=vault-front...",
-    "dev:vault-server": "turbo dev --filter=vault-server",
-    "build:vault-server": "turbo build --filter=vault-server",
-    "dev:docs": "turbo dev --filter=docs",
     "build:docs": "turbo build --filter=docs",
+    "build:vault-front": "turbo build --filter=vault-front...",
+    "build:vault-server": "turbo build --filter=vault-server",
+    "dev": "turbo run dev",
+    "dev:docs": "turbo dev --filter=docs",
+    "dev:vault-front": "turbo dev --filter=vault-front...",
+    "dev:vault-server": "turbo dev --filter=vault-server",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "prepare": "husky install",
+    "sort": "sort-package-json package.json apps/*/package.json packages/*/package.json",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "**/package.json": [
+      "sort-package-json"
+    ]
   },
   "devDependencies": {
     "@ledgerhq/eslint-config-custom": "workspace:*",
     "@types/node": "^18.15.13",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "latest",
+    "sort-package-json": "^2.4.1",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0"

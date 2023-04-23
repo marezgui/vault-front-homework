@@ -1,7 +1,7 @@
 {
   "name": "vault-server",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "build:docker": "docker build -t vault-front-homework:latest .",
     "dev": "pnpm build:docker && docker run --rm -p 4000:5000 vault-front-homework:latest"

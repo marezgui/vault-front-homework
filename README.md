@@ -50,5 +50,4 @@ pnpm build:docs
 
 ## TODO
 
-- [ ] Add git hooks
 - [ ] Add CI
