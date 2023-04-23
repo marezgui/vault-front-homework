@@ -47,7 +47,3 @@ pnpm build:vault-server
 pnpm build:vault-front
 pnpm build:docs
 ```
-
-## TODO
-
-- [ ] Add CI
