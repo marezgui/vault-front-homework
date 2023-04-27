@@ -24,16 +24,26 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    let isCancelled = false;
     setLoading(true);
+
     fetchNotifications(searchText)
       .then((notifications) => {
-        setNotifications(notifications);
-        setLoading(false);
+        if (!isCancelled) {
+          setNotifications(notifications);
+          setLoading(false);
+        }
       })
       .catch((error) => {
-        setLoading(false);
+        if (!isCancelled) {
+          setLoading(false);
+        }
         console.error(error);
       });
+
+    return () => {
+      isCancelled = true;
+    };
   }, [searchText, setLoading, setNotifications]);
 
   return (

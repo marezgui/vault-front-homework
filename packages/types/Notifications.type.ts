@@ -1,17 +1,29 @@
-interface NotificationData {
+type TransactionData = {
   id: number;
-  amount?: number;
-  unit?: string;
-  from?: string;
-  to?: string;
-  name?: string;
-  currency?: string;
-}
+  amount: number;
+  unit: string;
+  from: string;
+  to: string;
+};
 
-export interface Notification {
+type AccountData = {
   id: number;
-  type?: 'TRANSACTION_SENT' | 'TRANSACTION_RECEIVED' | 'ACCOUNT_CREATED';
-  data: NotificationData;
-}
+  name: string;
+  currency: string;
+};
+
+type TransactionNotification = {
+  id: number;
+  type: 'TRANSACTION_SENT' | 'TRANSACTION_RECEIVED';
+  data: TransactionData;
+};
+
+type AccountNotification = {
+  id: number;
+  type: 'ACCOUNT_CREATED';
+  data: AccountData;
+};
+
+export type Notification = TransactionNotification | AccountNotification;
 
 export type Notifications = Notification[];
